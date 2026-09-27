@@ -1,7 +1,7 @@
 name: BEAR music
 description: desktop music player program 
 technologies: electron, html, css, javascript
-currently uses memory access to play downloaded music
+  currently uses memory access to play downloaded music
 
 
 further advancements:
