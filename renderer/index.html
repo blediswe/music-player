@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bear music</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="appFrame">
+    <div class="topBar">
+      <div class="homeBadge">
+        <span></span>
+        <span>Home</span>
+      </div>
+    </div>
+
+    <div class="workspaceText">Desktop / Primary</div>
+
+    <div class="innerSurface">
+      <div class="heroRow">
+        <h1 class="brand">bear music</h1>
+      </div>
+
+      <div class="contentGrid">
+        <section class="panel">
+          <div class="panelHeader">
+            <h2>Library</h2>
+            <button id="newPlaylistBtn" class="iconButton" title="Add new playlist"><span class="iconGlyph">&#10010;</span></button>
+          </div>
+
+          <div id="libraryView" class="libraryView">
+            <div class="searchWrap">
+              <input type="text" id="searchBar" placeholder="Search">
+            </div>
+            <ul id="searchResults"></ul>
+
+            <div class="listSectionLabel">Playlists</div>
+            <ul id="playlistList" class="stackList playlistListCompact"></ul>
+
+          </div>
+
+          <div id="playlistPage" class="playlistPage isHidden">
+            <div class="backRow">
+              <button id="backToLibraryBtn" class="ghostButton backButton" title="Back"><span class="iconGlyph">&#8249;</span></button>
+            </div>
+            <div class="playlistContentsTitle">Contents</div>
+            <div id="playlistContentsName" class="playlistContentsName">Select a playlist</div>
+            <ul id="playlistContentsList"></ul>
+          </div>
+
+          <div id="playlistMessage"></div>
+        </section>
+
+        <section class="panel nowPlayingCard">
+          <div class="panelHeader">
+            <h3>Now Playing</h3>
+            <div class="secondaryInfo" id="queueLabel">No active queue</div>
+          </div>
+
+          <div id="songInfo">
+            <div class="albumArtWrap">
+              <img id="albumArt" src="./image.png" alt="Album Art">
+            </div>
+
+            <div class="trackCopy">
+              <strong id="title">No track selected</strong>
+              <span id="artist">Artist: Unknown</span>
+              <span id="album">Album: Unknown</span>
+            </div>
+          </div>
+
+          <div class="playerActions">
+            <button id="favoriteBtn" class="playerButton" title="Favorite">&#9825;</button>
+            <button id="prevBtn" class="playerButton" title="Previous track">&#9198;</button>
+            <button id="playPause" class="playerButton" title="Play or pause">&#9654;</button>
+            <button id="nextBtn" class="playerButton" title="Next track">&#9197;</button>
+            <button id="clearQueueBtn" class="playerButton" title="Stop">&#9632;</button>
+          </div>
+
+          <div class="playerMeta">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+
+          <div id="progressContainer" class="barContainer">
+            <div id="progress"></div>
+            <div id="handle"></div>
+          </div>
+
+          <div class="secondaryInfo">Volume</div>
+          <div id="volumeContainer" class="barContainer">
+            <div id="volumeProgress"></div>
+            <div id="volumeHandle"></div>
+          </div>
+
+          <div class="playlistTools">
+            <button id="addToPlaylistBtn" class="ghostButton playlistActionButton">&#10010; Add to playlist</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div id="playlistModal" class="modalOverlay isHidden">
+    <div class="modalCard">
+      <h3 class="modalTitle">New Playlist</h3>
+      <p class="modalText">Enter a playlist name.</p>
+      <input id="playlistModalInput" type="text" placeholder="Playlist name">
+      <div class="modalActions">
+        <button id="playlistModalCancel" class="ghostButton">Cancel</button>
+        <button id="playlistModalCreate" class="ghostButton">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="addToPlaylistModal" class="modalOverlay isHidden">
+    <div class="modalCard">
+      <h3 class="modalTitle">Add To Playlist</h3>
+      <p class="modalText">Choose a playlist for the current song.</p>
+      <ul id="addToPlaylistList" class="modalPlaylistList"></ul>
+      <div class="modalActions">
+        <button id="addToPlaylistCancel" class="ghostButton">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.5/dist/jsmediatags.min.js"></script>
+  <script src="./renderer.js"></script>
+</body>
+</html>
